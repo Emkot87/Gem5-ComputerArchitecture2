@@ -29,6 +29,21 @@
 
 #### SpecLibm 
 
+Σε αυτό το Benchmark παρατηρήσαμε οτι το Cacheline size επηρέασε σημαντικά το CPI ρίχνοντας το miss rate της L1. Μικρή ήταν επιρροή του μεγέθους της L2 Cache.  
+![image](https://user-images.githubusercontent.com/49078291/146428414-cc5b09ab-77a0-4f36-8ee0-e23aa4568690.png)
+![image](https://user-images.githubusercontent.com/49078291/146428430-03fc9730-ebaa-4130-be81-c1912c49cde0.png)
+![image](https://user-images.githubusercontent.com/49078291/146428655-ecfc7a4b-8f77-4960-93a7-8ed7bf04c21e.png)
+
+#### SpecMcf  
+
+![image](https://user-images.githubusercontent.com/49078291/146428772-0292d177-2da9-42c0-8c0f-0e50724d8790.png)
+![image](https://user-images.githubusercontent.com/49078291/146428803-640e9856-dc3b-457e-8202-1281b52fa1ed.png)
+
+#### SpecSjeng
+
+![image](https://user-images.githubusercontent.com/49078291/146428874-9ce0b799-1118-4840-a57b-378ebc1ab623.png)
+
+
 
 
 ### Βήμα 3ο
