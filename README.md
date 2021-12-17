@@ -21,8 +21,8 @@ Executed instructions (sim_insts) : 100000001
   Executed instructions (sim_insts) : 100000000  
 
   libm :  
-  Commited instructions (system.cpu.committedInsts) :    
-  Executed instructions (sim_insts) :   
+  Commited instructions (system.cpu.committedInsts) : 100000000  
+  Executed instructions (sim_insts) : 100000000  
 
   Γιατί τα committed instructions δεν είναι ίσα με τα executed instructions?  
 
@@ -44,7 +44,7 @@ Executed instructions (sim_insts) : 100000001
   Block replacements l1 data cache (system.cpu.dcache.replacements) : 5262377    
 
   libm :  
-  Block replacements l1 data cache (system.cpu.dcache.replacements) :   
+  Block replacements l1 data cache (system.cpu.dcache.replacements) : 1486955
 
 
     1.c.  
@@ -67,7 +67,7 @@ Executed instructions (sim_insts) : 100000001
 την πληροφορία, πώς θα μπορούσαμε να τα υπολογίσουμε από τα υπόλοιπα metrics του
 gem5?  
 
-  ?????? Δεν ξέρω. Αν αθροίσουμε όλα τα άλλα misses της L2;    
+  Αν αθροίσουμε όλα τα εκάστοτε accesses της L2    
 
 
     2.(i)  
@@ -133,6 +133,16 @@ gem5?
  Φτιάξτε γραφήματα που να απεικονίζουν αυτές τις πληροφορίες για το σύνολο των benchmarks. Τι παρατηρείτε;  
 
   Μεγάλα miss rate στις data caches αντιστοιχούν σε μεγάλα CPI και συνεπώς χειότερες επιδόσεις. Τα misses στην L1I δεν φαίνεται να επηρεάζουν ιδιαίτερα το CPI.  
+  
+![εικόνα](https://user-images.githubusercontent.com/49563194/146544468-72364f74-1241-46d9-823c-4f06111ceb78.png)  
+
+![εικόνα](https://user-images.githubusercontent.com/49563194/146544494-0772e369-aa40-40a9-9573-d54c69cb9ea4.png)  
+
+![εικόνα](https://user-images.githubusercontent.com/49563194/146544523-d0b620b1-33a5-4988-bcbf-7fca812da306.png)  
+
+![εικόνα](https://user-images.githubusercontent.com/49563194/146544543-06991a88-ef26-4f0c-8547-c9f18dbeb043.png)  
+
+![εικόνα](https://user-images.githubusercontent.com/49563194/146544567-cd70092a-e707-4557-bc82-83eca365cfcc.png)  
 
     3. DEFAULT(2 Ghz)  
   bzip :  
@@ -159,18 +169,6 @@ gem5?
   system.clk_domain.clock : 1000  
   cpu_cluster.clk_domain.clock (system.cpu_clk_domain.clock) : 500  
   sim_seconds : 0.17467  
-
-![εικόνα](https://user-images.githubusercontent.com/49563194/146544468-72364f74-1241-46d9-823c-4f06111ceb78.png)  
-
-![εικόνα](https://user-images.githubusercontent.com/49563194/146544494-0772e369-aa40-40a9-9573-d54c69cb9ea4.png)  
-
-![εικόνα](https://user-images.githubusercontent.com/49563194/146544523-d0b620b1-33a5-4988-bcbf-7fca812da306.png)  
-
-![εικόνα](https://user-images.githubusercontent.com/49563194/146544543-06991a88-ef26-4f0c-8547-c9f18dbeb043.png)  
-
-![εικόνα](https://user-images.githubusercontent.com/49563194/146544567-cd70092a-e707-4557-bc82-83eca365cfcc.png)  
-
-
 
       3. 1.5 Ghz  
   bzip :  
@@ -202,8 +200,6 @@ gem5?
   Μπορείτε να εξηγήσετε τελικά τι χρονίζεται στα 1,5GHz και τι χρονίζεται στα default GHz;   
   Το cpu clock, ενώ το system clock μένει σταθερό.  
 
-Αναζητώντας πληροφορίες για το ρολόι, μπορείτε να δώσετε μια πιο σαφή απάντηση;   
-???????????Ξερω γω    
 
 Αν προσθέσουμε άλλον έναν επεξεργαστή, ποια εικάζετε ότι θα είναι η συχνότητα του;  
 Ίδια με το cpu clock που ορίζουμε  
@@ -288,5 +284,7 @@ system.cpu.cpi:	1.461664
 --l1d_size=32kB --l1i_size=16kB --l2_size=256kB --l1i_assoc=2 --l1d_assoc=2 --l2_assoc=2 --cacheline_size=128  
 system.cpu.cpi:	2.585404  
 
-Οι παραπάνω επιλογές έγιναν αυθαίρετα συγκρίνοντας την αύξηση των μεταβλητών σε σχέση με την απόδοση που προσφέρει η κάθε αλλαγή.
+Οι παραπάνω επιλογές έγιναν αυθαίρετα συγκρίνοντας την αύξηση των μεταβλητών σε σχέση με την απόδοση που προσφέρει η κάθε αλλαγή.  
+Τα περισσότερα benchmark επωφελούνται από την αύξηση της L1 και L2 cache καθώς και του αυξημένου associativity ωστόσο το κόστος τα καθιστά μη βιώσιμα.  
+
 
