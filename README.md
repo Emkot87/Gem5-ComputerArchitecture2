@@ -269,23 +269,23 @@ To CPI μειώθηκε το περισσότερο κατά 0.1 με την α�
 ### Βήμα 3ο
 
 ##### specbzip
---l1d_size=64kB --l1i_size=64kB --l2_size=1024kB --l1i_assoc=2 --l1d_assoc=2 --l2_assoc=2 --cacheline_size=64
+--l1d_size=64kB --l1i_size=64kB --l2_size=1024kB --l1i_assoc=2 --l1d_assoc=2 --l2_assoc=2 --cacheline_size=64  
 system.cpu.cpi:	1.718756	
 
 ##### spechmmer
---l1d_size=64kB --l1i_size=64kB --l2_size=256kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=1 --cacheline_size=128
+--l1d_size=64kB --l1i_size=64kB --l2_size=256kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=1 --cacheline_size=128  
 system.cpu.cpi: 1.213938
 
 ##### speclibm
---l1d_size=32kB --l1i_size=16kB --l2_size=256kB --l1i_assoc=2 --l1d_assoc=2 --l2_assoc=2 --cacheline_size=256
+--l1d_size=32kB --l1i_size=16kB --l2_size=256kB --l1i_assoc=2 --l1d_assoc=2 --l2_assoc=2 --cacheline_size=256  
 system.cpu.cpi:	1.991816
 
 ##### specmcf
---l1d_size=64kB --l1i_size=32kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=1 --cacheline_size=32 
+--l1d_size=64kB --l1i_size=32kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=1 --cacheline_size=32   
 system.cpu.cpi:	1.461664
 
 ##### specsjeng
---l1d_size=32kB --l1i_size=16kB --l2_size=256kB --l1i_assoc=2 --l1d_assoc=2 --l2_assoc=2 --cacheline_size=128
+--l1d_size=32kB --l1i_size=16kB --l2_size=256kB --l1i_assoc=2 --l1d_assoc=2 --l2_assoc=2 --cacheline_size=128  
 system.cpu.cpi:	2.585404  
 
 Οι παραπάνω επιλογές έγιναν αυθαίρετα συγκρίνοντας την αύξηση των μεταβλητών σε σχέση με την απόδοση που προσφέρει η κάθε αλλαγή.
