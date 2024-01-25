@@ -1,4 +1,9 @@
-# Gem5-Arch2
+# Gem5-ComputerArchitecture Project 2
+
+#### Computer Architecture Proejct
+
+##### Running common benchmarks on Gem5 with different CPU parameters to find the optimal configuration
+
 Ελευθεριάδης Ανδρέας Ευστάθιος 9649  
 Κωτούλας Εμμανουήλ 9697  
 
